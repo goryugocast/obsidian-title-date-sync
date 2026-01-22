@@ -1,0 +1,10 @@
+{
+    "id": "obsidian-title-date-sync",
+    "name": "Title Date Sync",
+    "version": "1.0.0",
+    "minAppVersion": "0.15.0",
+    "description": "Sync YAML date when note title with date is renamed",
+    "author": "goryugo",
+    "authorUrl": "https://github.com/goryugo",
+    "isDesktopOnly": false
+}
