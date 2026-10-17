@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "rollup --config rollup.config.js -w",
     "build": "rollup --config rollup.config.js --environment BUILD:production",
-    "deploy": "npm run build && cp main.js manifest.json styles.css \"/Users/goryugo/Library/Mobile Documents/iCloud~md~obsidian/Documents/Obsidian_local/.mac/plugins/obsidian-title-date-sync/\""
+    "deploy": "npm run build && cp main.js manifest.json styles.css \"/Users/goryugo/Library/Mobile Documents/iCloud~md~obsidian/Documents/Obsidian_local/.mac/plugins/obsidian-title-date-sync/\"",
+    "test": "npm run build && node --test tests/*.test.cjs"
   },
   "keywords": [
     "obsidian",
