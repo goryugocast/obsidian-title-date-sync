@@ -30,13 +30,9 @@ export default class TitleDateSyncPlugin extends Plugin {
         const oldDate = extractDate(oldBasename);
         const newDate = extractDate(newBasename);
 
-        // Conditions to proceed:
-        // 1. New title must have a valid date.
-        // We do strictly need oldDate to be present?
-        // User feedback: "It doesn't work when changing from 'not a date' to 'date'".
-        // So we should proceed if newDate is valid, regardless of oldDate.
-        // The frontmatter check will prevent unnecessary writes if the date is already correct.
-        if (newDate) {
+        // Preserve metadata when only the title text or folder changes.
+        // A newly added title date must still synchronize existing fields.
+        if (newDate && (!oldDate || !oldDate.isSame(newDate, 'day'))) {
             // Check keys logic
             // We need to check if the file has any of the target keys.
             // processFrontmatter gives us a chance to check and update atomically.
